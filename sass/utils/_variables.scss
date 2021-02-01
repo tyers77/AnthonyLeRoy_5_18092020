@@ -1,0 +1,62 @@
+@mixin header{
+    width: 100%;
+    text-align: center;
+        img{
+            width: 40%;
+            height: 150px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 10px 10px 10px 10px #808080;
+
+        }
+        h1{
+
+            width: 100%;
+            font-size: 2.8em;
+            font-weight: bold;
+
+        }
+}
+
+@mixin footer{
+    width: 100%;
+    background-image: linear-gradient(to right, #E98B0B, #935FF4);
+    box-shadow: 0px 5px 5px 0px #808080;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .reseau{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .social{
+       
+           color:#0673E7; 
+            font-size: 2em;
+        
+    }
+    
+    ul{
+        display: flex; 
+        justify-content: center;
+        color: #000;
+        font-weight: 100;
+        margin: 0;
+        margin-left: 15px;
+        padding: 0;
+    }
+    li{
+       
+    padding-right: 10px;
+        color: #000;
+        margin-left: 15px;
+    }
+    i{
+        margin-right: 10px;
+    }
+    a{
+        text-decoration: none;
+        color: #000;
+    }
+}
