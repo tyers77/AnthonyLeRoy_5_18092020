@@ -1,20 +1,48 @@
+/*variables*/
+$background: #F3E9F1;
+$gradient : linear-gradient(to right, #E98B0B, #935FF4);
+
+/*mixin*/
 @mixin header{
     width: 100%;
     text-align: center;
+    padding-top: 20px;
+    margin-bottom: 30px;
+    background-image: url(../images/forêtchêne.jpg);
+    
         img{
             width: 40%;
             height: 150px;
             margin-bottom: 40px;
             border-radius: 15px;
-            box-shadow: 10px 10px 10px 10px #808080;
-
         }
         h1{
-
-            width: 100%;
-            font-size: 2.8em;
+            margin-right: 90px;
+            margin-left: 90px;
+            color: black;
+            background-color: #E98B0B;
             font-weight: bold;
-
+        }
+        .back{
+            display: flex;
+            justify-content: space-around;
+        }
+        a{
+            color: #000;
+            font-size: 1.5em;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+            list-style: none;
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 5px;
+            background-image: $gradient;
+            transition: background-color 500ms, box-shadow 500ms;
+                &:hover{
+                    opacity: 0.90;
+                }
         }
 }
 
@@ -40,7 +68,7 @@
     ul{
         display: flex; 
         justify-content: center;
-        color: #000;
+        color: #0673E7;
         font-weight: 100;
         margin: 0;
         margin-left: 15px;
@@ -49,14 +77,40 @@
     li{
        
     padding-right: 10px;
-        color: #000;
+        color: #0673E7;
         margin-left: 15px;
+        
     }
     i{
         margin-right: 10px;
     }
     a{
         text-decoration: none;
-        color: #000;
+        color:#0673E7;
     }
+}
+
+@mixin responsive{
+    header{
+        img{
+            width: 60%;
+        }
+    }
+    nav{
+        margin-left: 5px;
+        margin-right: 5px;
+        
+    }
+    .shop{
+        display: flex;
+        flex-direction: column;
+
+        li{
+             width: 95%;
+        }
+    }
+    .category{
+        margin-left: 0;
+    }
+
 }

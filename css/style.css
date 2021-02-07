@@ -1,26 +1,93 @@
+@charset "UTF-8";
+/*variables*/
+/*mixin*/
 body {
   width: 100%;
   margin: 0;
-  background-color: #F3E9F1;
+  background-image: url(../images/texture.jpg);
 }
 
 header {
   width: 100%;
   text-align: center;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  background-image: url(../images/forêtchêne.jpg);
+  background-image: url(../images/forêtchêne.jpg);
 }
 header img {
   width: 40%;
   height: 150px;
   margin-bottom: 40px;
   border-radius: 15px;
-  box-shadow: 10px 10px 10px 10px #808080;
 }
 header h1 {
-  width: 100%;
-  font-size: 2.8em;
+  margin-right: 90px;
+  margin-left: 90px;
+  color: black;
+  background-color: #E98B0B;
   font-weight: bold;
 }
+header .back {
+  display: flex;
+  justify-content: space-around;
+}
+header a {
+  color: #000;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  list-style: none;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 5px;
+  background-image: linear-gradient(to right, #E98B0B, #935FF4);
+  transition: background-color 500ms, box-shadow 500ms;
+}
+header a:hover {
+  opacity: 0.9;
+}
 
+footer {
+  width: 100%;
+  background-image: linear-gradient(to right, #E98B0B, #935FF4);
+  box-shadow: 0px 5px 5px 0px #808080;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+footer .reseau {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .social {
+  color: #0673E7;
+  font-size: 2em;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  color: #0673E7;
+  font-weight: 100;
+  margin: 0;
+  margin-left: 15px;
+  padding: 0;
+}
+footer li {
+  padding-right: 10px;
+  color: #0673E7;
+  margin-left: 15px;
+}
+footer i {
+  margin-right: 10px;
+}
+footer a {
+  text-decoration: none;
+  color: #0673E7;
+}
+
+/*menu*/
 .shop {
   width: 100%;
   padding-left: 0;
@@ -48,28 +115,65 @@ header h1 {
   opacity: 0.9;
   box-shadow: 0px 15px 15px 0px #808080;
 }
+.shop li a {
+  text-decoration: none;
+  color: black;
+}
 
-section .category {
+/*section produits*/
+h2 {
   text-align: center;
   font-size: 2.1em;
 }
-section h2 {
-  font-size: 2em;
-  margin-left: 40px;
-}
 
 .description {
+  height: 180px;
   margin: 0;
   margin-left: 25px;
-  width: 90%;
-  display: flex;
+  margin-right: 25px;
   border: #E98B0B 5px solid;
   border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: 10px 10px 10px 10px #808080;
 }
-.description img {
-  width: 35%;
+.description .figure {
+  display: flex;
+  margin: 0;
+}
+.description .figure .figcaption {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.description .figure .figcaption .name {
+  width: 60%;
+  margin: 0;
+  text-align: center;
+  padding-top: 55px;
+  font-size: 1.5em;
+}
+.description .figure .figcaption .price {
+  width: 25%;
+  margin: 0;
+  padding-top: 55px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+.description .figure .figcaption a {
+  padding-top: 57px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  width: 15%;
+  text-decoration: none;
+  border-radius: 0px 6px 6px 0px;
+  background-image: linear-gradient(to right, #e98b0b, #935ff4);
+}
+.description .figure img {
+  width: 25%;
+  height: 180px;
   border-radius: 5px 0px 0px 5px;
   animation: img 3s ease-in-out;
 }
@@ -81,82 +185,16 @@ section h2 {
     transform: scale(1);
   }
 }
-.description figcaption {
-  width: 45%;
-  margin-top: 60px;
-  font-size: 2.5em;
-  text-align: center;
-}
-.description figcaption span {
-  text-align: center;
-  font-weight: bolder;
-  font-size: 3em;
-}
-.description button {
-  font-size: 1.5em;
-  color: #fff;
-  width: 20%;
-  background-image: linear-gradient(to right, #E98B0B, #935FF4);
-  border-left: #E98B0B 1px solid;
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
-  border-radius: 0px 4px 4px 0px;
-}
-.description button i {
-  display: none;
-}
-.description button:hover {
-  cursor: pointer;
-  opacity: 0.9;
-  box-shadow: 0px 15px 15px 0px #808080;
-}
 
-footer {
-  width: 100%;
-  background-image: linear-gradient(to right, #E98B0B, #935FF4);
-  box-shadow: 0px 5px 5px 0px #808080;
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-footer .reseau {
-  display: flex;
-  justify-content: space-evenly;
-}
-footer .social {
-  color: #0673E7;
-  font-size: 2em;
-}
-footer ul {
-  display: flex;
-  justify-content: center;
-  color: #000;
-  font-weight: 100;
-  margin: 0;
-  margin-left: 15px;
-  padding: 0;
-}
-footer li {
-  padding-right: 10px;
-  color: #000;
-  margin-left: 15px;
-}
-footer i {
-  margin-right: 10px;
-}
-footer a {
-  text-decoration: none;
-  color: #000;
-}
-
+/*responsive*/
 @media all and (max-width: 570px) {
   header img {
     width: 60%;
   }
 
   nav {
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   .shop {
@@ -171,47 +209,27 @@ footer a {
     margin-left: 0;
   }
 
-  section h2 {
-    margin-left: 0px;
+  .description {
+    margin-left: 5px;
+    width: 94%;
+  }
+  .description img {
+    image-rendering: pixelated;
   }
 
-  .description {
-    height: 126px;
-    margin-left: 15px;
-    margin-right: 15px;
-    width: 90%;
-    box-shadow: 5px 5px 5px 5px #808080;
+  .price {
+    font-size: 1em !important;
+    padding-top: 61px !important;
   }
-  .description figcaption {
-    width: 45%;
-    margin-top: 20px;
-    font-size: 1.8em;
-    text-align: center;
+
+  .name {
+    font-size: 1em !important;
+    padding-top: 61px !important;
   }
-  .description figcaption span {
-    text-align: center;
-    font-weight: bolder;
-    font-size: 1.3em;
-  }
-}
-@media all and (max-width: 740px) {
-  .description figcaption {
-    width: 45%;
-    margin-top: 10px;
-    font-size: 1.8em;
-    text-align: center;
-  }
-  .description figcaption span {
-    text-align: center;
-    font-weight: bolder;
-    font-size: 1.8em;
-  }
-  .description button span {
-    display: none;
-  }
-  .description button i {
-    display: block;
-    color: white;
+
+  .figcaption a {
+    font-size: 0.7em !important;
+    padding-top: 65px !important;
   }
 }
 

@@ -9,11 +9,47 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script src="https://kit.fontawesome.com/45eba3c3b0.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" type="image/jpg" href="../images/logo.jpg">
-    <title>Orinoco</title>
+    <title>Orinoco Meubles</title>
 </head>
 <body>
+    
     <header>
-        <h1>Votre partenaire de commerce en ligne</h1>
+        <a class="navLink" href="index.html">Accueil</a>
+        <h1>Site de vente en ligne</h1>
         <img src="../images/image1_min.jpg" alt="logo du site">
+        
     </header>
+
+    <nav>
+        <ul class="shop">
+            <li><i class="fas fa-money-bill-wave"></i> Mode de paiement</li>
+            <li><i class="fas fa-truck"></i> Livraison</li>
+            <li><i class="fas fa-info"></i> Aide</li>
+            <li><a href="basket.html"><i class="fas fa-cart-arrow-down"></i>PANIER</a></li>
+        </ul>
+    </nav>
+    <section id="product">
+        <h2>Votre selection</h2>
+        <div class="descriptionOption">
+            <select name="option" id="choice" required aria-invalid="false">
+                <option disabled value="" selected>
+                    Vernis de finition
+                </option>
+            </select>
+        </div>
+        <button id="panier">Ajouter au panier</button>
+    </section>
+    <footer>
+        <div class="reseau">
+            <p><a class="social" href="https://twitter.com/"><span class="fa fa-twitter icon-md"></span></a></p>
+            <p><a class="social" href="https://www.facebook.com/"><span class="fa fa-facebook icon-md"></span></a></p>
+            <p><a class="social" href="https://www.instagram.com/"><span class="fa fa-instagram icon-md"></span></a></p>
+        </div>
+        <ul>
+            <li><i class="fas fa-hands-helping"></i>Devenir partenaire</li>
+            <li>Mentions légales</li>
+            <li><a href="mailto">Contact</a></li>
+        </ul>
+    </footer>
+    <script src="../js/product.js" defer></script>
 </body>
