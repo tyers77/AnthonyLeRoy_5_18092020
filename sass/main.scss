@@ -97,8 +97,9 @@ h2{
                                     
                                     background-image: linear-gradient(to right, rgb(233, 139, 11), rgb(147, 95, 244));
                                 }
+                            
                 }
-            
+                
                   
             img{
                 width: 25%;
@@ -121,7 +122,6 @@ h2{
 @media all and (max-width: 570px){
     @include responsive;
     
-
     .description{
         margin-left: 5px;
         width: 94%;

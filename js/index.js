@@ -1,7 +1,9 @@
+ /*repère dans l API */
+let idProduct = "";
 
 /*fonction requète Get by Fetch pour récuperer le tableau des produits c'est le lien avec l'API*/
 const getAllProduct = function(){
-    fetch("http://localhost:3000/api/furniture")/*requète GET by url*/
+    fetch("http://localhost:3000/api/furniture" + "/" + idProduct)/*requète GET by url*/
     .then(response => response.json())/*ensuite la réponse est une reponse json faire "réponse est une réponse json"*/ 
     .then(response => createProductHtml(response))/*ensuite faire de la réponse  ???*/
     .catch(error => console.error("erreur" + error))/*si il y a une erreur l inscrire dans la console*/  
@@ -62,8 +64,6 @@ const createProductHtml = function (products){
 
     });
 }
-/*tentative d'écoute a voir ????
- const lienId = document.getElementsByClassName("lienDetail");
-    lienId.addEventListener("click",function(){
-        lienId.innerHTML = "patientez"
-    })*/
+
+/**Le Panier 1: initialisé la panier 2: crée le tableau*/
+/**Affiche le nombre de produit mis au panier */

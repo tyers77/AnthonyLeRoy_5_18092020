@@ -1,0 +1,281 @@
+@charset "UTF-8";
+/*variables*/
+/*mixin*/
+body {
+  width: 100%;
+  margin: 0;
+  background-image: url(../images/texture.jpg);
+}
+
+header {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  background-image: url(../images/forêtchêne.jpg);
+  /*.back{
+      display: flex;
+      justify-content: space-around;
+  }*/
+  background-image: url(../images/forêtchêne.jpg);
+}
+header img {
+  width: 40%;
+  height: 150px;
+  margin-bottom: 40px;
+  border-radius: 15px;
+}
+header h1 {
+  margin-right: 90px;
+  margin-left: 90px;
+  color: black;
+  background-color: #E98B0B;
+  font-weight: bold;
+}
+header a {
+  color: #000;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  list-style: none;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 5px;
+  background-image: linear-gradient(to right, #E98B0B, #935FF4);
+  transition: background-color 500ms, box-shadow 500ms;
+}
+header a:hover {
+  opacity: 0.9;
+}
+
+footer {
+  width: 100%;
+  background-image: linear-gradient(to right, #E98B0B, #935FF4);
+  box-shadow: 0px 5px 5px 0px #808080;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+footer .reseau {
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .social {
+  color: #0673E7;
+  font-size: 2em;
+}
+footer ul {
+  display: flex;
+  justify-content: center;
+  color: #0673E7;
+  font-weight: 100;
+  margin: 0;
+  margin-left: 15px;
+  padding: 0;
+}
+footer li {
+  padding-right: 10px;
+  color: #0673E7;
+  margin-left: 15px;
+}
+footer i {
+  margin-right: 10px;
+}
+footer a {
+  text-decoration: none;
+  color: #0673E7;
+}
+
+/*menu*/
+.shop {
+  width: 100%;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+.shop li {
+  width: 20%;
+  color: #000;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  list-style: none;
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 8px;
+  background-image: linear-gradient(to right, #E98B0B, #935FF4);
+  box-shadow: 0px 5px 5px 0px #808080;
+  transition: background-color 500ms, box-shadow 500ms;
+}
+.shop li:hover {
+  cursor: pointer;
+  opacity: 0.9;
+  box-shadow: 0px 15px 15px 0px #808080;
+}
+.shop li i {
+  padding-right: 10px;
+}
+.shop li a {
+  text-decoration: none;
+  color: black;
+}
+
+#product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*section produits*/
+h2 {
+  text-align: center;
+  font-size: 2.1em;
+}
+
+.description {
+  height: 300px;
+  margin: 0;
+  margin-left: 25px;
+  margin-right: 25px;
+  border: #E98B0B 5px solid;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+.description .figure {
+  display: flex;
+  margin: 0;
+}
+.description .figure .figcaption {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.description .figure .figcaption .name {
+  width: 40%;
+  margin: 0;
+  text-align: start;
+  padding-left: 20px;
+  padding-top: 10px;
+  font-size: 1.5em;
+}
+.description .figure .figcaption .detail {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin: 0;
+  font-size: 1.2em;
+}
+.description .figure .figcaption .price {
+  display: flex;
+  justify-content: flex-end;
+  width: 98%;
+  margin: 0;
+  padding-top: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.description .figure .figcaption a {
+  padding-top: 57px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  width: 15%;
+  text-decoration: none;
+  border-radius: 0px 6px 6px 0px;
+  background-image: linear-gradient(to right, #e98b0b, #935ff4);
+}
+.description .figure img {
+  width: 25%;
+  height: 300px;
+  border-radius: 5px 0px 0px 5px;
+  animation: img 3s ease-in-out;
+}
+@keyframes img {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#panier {
+  margin-left: 25%;
+  margin-right: 25%;
+  width: 50%;
+  font-size: 1.5em;
+  font-weight: bold;
+  background-image: linear-gradient(to right, #E98B0B, #935FF4);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+#panier:hover {
+  cursor: pointer;
+  opacity: 0.9s;
+}
+
+#choice {
+  background-color: #F3E9F1;
+  border: none;
+  border-left: #E98B0B 2px solid;
+  border-radius: 0px 6px 6px 0px;
+  /*retirer bordures noires lorqu'on a selectionner le vernis*/
+}
+
+/*responsive*/
+@media all and (max-width: 570px) {
+  header img {
+    width: 60%;
+  }
+
+  nav {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .shop {
+    display: flex;
+    flex-direction: column;
+  }
+  .shop li {
+    width: 95%;
+  }
+
+  .category {
+    margin-left: 0;
+  }
+
+  .description {
+    margin-left: 5px;
+    width: 94%;
+  }
+  .description img {
+    image-rendering: pixelated;
+  }
+
+  .price {
+    font-size: 1em !important;
+  }
+
+  .name {
+    font-size: 1em !important;
+  }
+
+  #choice {
+    width: 60%;
+  }
+}
+@media all and (max-width: 387px) {
+  .detail {
+    font-size: 0.85em !important;
+  }
+}
+
+/*# sourceMappingURL=product.css.map */

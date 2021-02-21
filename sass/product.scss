@@ -1,0 +1,196 @@
+@import "./utils/variables";
+
+body{
+    width: 100%;
+    margin: 0;
+    background-image: url(../images/texture.jpg);
+}
+header{
+    @include header;
+    background-image: url(../images/forêtchêne.jpg);
+}
+footer{
+    @include footer;
+ }
+
+/*menu*/
+.shop{
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+        li{
+            width: 20%;
+            color: #000;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            list-style: none;
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 8px;
+            background-image: $gradient;
+            box-shadow: 0px 5px 5px 0px #808080;
+            transition: background-color 500ms, box-shadow 500ms;
+    
+            &:hover{
+                cursor: pointer;
+                opacity: 0.90;
+                box-shadow: 0px 15px 15px 0px #808080;
+            }
+            i{
+                padding-right: 10px;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+                
+            }
+            
+        }
+}
+#product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/*section produits*/
+h2{
+    text-align: center;
+    font-size: 2.1em;
+}
+
+.description{
+    height: 300px;
+    margin: 0;
+    margin-left: 25px;
+    margin-right: 25px;
+    border:  #E98B0B 5px solid;
+    border-radius: 12px;
+    margin-bottom: 30px;
+        
+        .figure{
+            display: flex;
+            margin: 0;
+                .figcaption{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                        .name{
+                            width: 40%;
+                            margin: 0;
+                            text-align: start;
+                            padding-left: 20px;
+                            padding-top: 10px;
+                            font-size: 1.5em;
+                        }
+                        .detail{
+                            padding-left: 20px;
+                            padding-top: 10px;
+                            padding-right: 10px;
+                            margin: 0;
+                            font-size: 1.2em;
+                        }
+                            .price{
+                                display: flex;
+                                justify-content: flex-end;
+                                width: 98%;
+                                margin: 0;
+                                padding-top: 10px;
+                                font-size: 1.5em;
+                                font-weight: bold;
+                                
+                            }
+                                a{
+                                    padding-top: 57px;
+                                    padding-left: 5px;
+                                    padding-right: 5px;
+                                    font-size: 1.3em;
+                                    font-weight: bold;
+                                    text-align: center;
+                                    width: 15%;
+                                    text-decoration: none;
+                                    border-radius: 0px 6px 6px 0px;
+                                    
+                                    background-image: linear-gradient(to right, rgb(233, 139, 11), rgb(147, 95, 244));
+                                }
+                            
+                }
+                
+                  
+            img{
+                width: 25%;
+                height: 300px;
+                border-radius: 5px 0px 0px 5px;
+                animation: img 3s ease-in-out;
+            }
+                @keyframes img {
+                0%{
+                    transform: scale(0);
+                }
+                100%{
+                    transform: scale(1);
+                }
+        }
+}
+}
+#panier{
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 50%;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-image: $gradient;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 25px;
+   
+    &:hover{
+        cursor: pointer;
+        opacity: 0.90s;
+       
+    }   
+}
+#choice{
+    background-color:$background;
+    border: none;  
+    border-left:  #E98B0B 2px solid;
+    border-radius: 0px 6px 6px 0px;
+  /*retirer bordures noires lorqu'on a selectionner le vernis*/
+}
+
+
+
+/*responsive*/
+@media all and (max-width: 570px){
+    @include responsive;
+    
+    .description{
+        margin-left: 5px;
+        width: 94%;
+            img{
+                image-rendering: pixelated;
+            }
+    }
+    .price{
+        font-size: 1em!important;
+        
+    }
+    .name{
+        
+        font-size: 1em!important;
+        
+    }
+    #choice{
+        width: 60%;
+    }
+
+}
+@media all and (max-width: 387px){
+    .detail{
+        font-size: 0.85em!important;
+    }
+}
