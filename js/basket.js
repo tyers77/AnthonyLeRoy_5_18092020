@@ -59,11 +59,11 @@ recapOption.innerHTML = element.varnish;
 };
 
 
-/**création du tableau du local.storage avec transformation en JSON pour la lecture et le passage des produits */
-let tableauPanier = []; /**creation du tableau vide */
+/**création du tableau du local.storage avec transformation en JSON pour la lecture et le passage des produits 
+let tableauPanier = []; creation du tableau vide 
 localStorage.setItem("tableauBasket",JSON.stringify(tableauPanier));/**stockage du tableau JS dans le localstorage sous la forme JSON*/
 
-/**création des objets produitspour le tableauPanier*/
+/**création des objets produitspour le tableauPanier
 let myproduct = {
     id:"element.id",
     name:"element.name",
@@ -71,7 +71,7 @@ let myproduct = {
     price:"element.price",
     description:"element.description",
     imageUrl:"element.imageUrl",
-}
+}*/
 
 
 

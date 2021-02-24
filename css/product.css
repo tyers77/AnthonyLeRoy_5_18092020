@@ -218,7 +218,7 @@ h2 {
 }
 #panier:hover {
   cursor: pointer;
-  opacity: 0.9s;
+  opacity: 0.9;
 }
 
 #choice {
