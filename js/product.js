@@ -1,5 +1,9 @@
-/**variable pour la crtion d'un objet pour le panier */
+/**variable pour la création d'un objet pour le panier */
 let myProduct;
+
+let panierProducts = []
+
+ 
 
 /**code permettant de recuperer l id de l objet avec "new urlsearchparams"*/
 let param = new URLSearchParams(window.location.search);
@@ -86,9 +90,15 @@ const productdescription = function(element){ /*fonction qui crée le HTML de la
     element.varnish.forEach(element => { /**pour chaque(foreach) element.vernis on crée un "element"(un écrit qui sera défini par le type de vernis) */
         let option = document.createElement("option")/**on crée une variable "option"qui crée une balise option */
         option.innerHTML = element;/* on utilise la variable crée dessus pour afficher  le nom des vernis*/
-        descriptionSelect.appendChild(option);/**on place la balise <option> en tant qu enfant de la balise <select> */    
+        descriptionSelect.appendChild(option);/**on place la balise <option> en tant qu enfant de la balise <select> */  
+        
+        
     });
     addPanier() /**méthode d'ajout au panier dans le local storage */
+    
+    /*productPanier = document.getElementById("productPanier");/**ajout du nombre de produit sur le HTML de la page produit 
+    productPanier.innerHTML = userPanier.length; */
+         
 }  
 
 /**Le Panier */
@@ -96,28 +106,46 @@ const productdescription = function(element){ /*fonction qui crée le HTML de la
 /**méthode : */
 addPanier = () =>{
   	let inputBuy = document.getElementById("panier");    /**DOM */
-  	inputBuy.addEventListener("click", function() {      /*évènement: Au clic de l'user pour mettre le produit dans le panier*/
-        let userPanier = JSON.parse(localStorage.getItem("userPanier"));  /**recuperation du tableau dans le local storage*/
-        if (Array.isArray(userPanier)){    /**si userPanier est un tableau, le tableau userPanier pour chaque élément, si le nom est identique ajouté 1  */
+  	inputBuy.addEventListener("click", function() {  /*évènement: Au clic de l'user pour mettre le produit dans le panier*/
+        //console.log(myProduct)
+            userPanier = JSON.parse(localStorage.getItem("userPanier"));  /**recuperation du tableau dans le local storage*/
+        //console.log(userPanier)
+
+        
+    console.log("ma méthode");
+        if (Array.isArray(userPanier)){  
+            let dupli = false  /**si userPanier est un tableau, le tableau userPanier pour chaque élément, si le nom est identique ajouté 1  */
             userPanier.forEach((element)=>{
+                console.log(myProduct)
                 if(element.name == myProduct.name){
-                    myProduct.quantity ++
-                    return /**stop le code la condition est remplie */
-                }else {   /**sinon push de l'objet myproduct dans le tableau userPanier */
-                    userPanier.push(myProduct)
-                    localStorage.setItem("userPanier",JSON.stringify(userPanier)) /**et le stocké en JSON dans le storage */
-                }
+                    element.quantity ++
+                    dupli = true;
+                   return false /* stop la boucle la condition est remplie */
+                 }   
+                   
+               
             })
+            if(!dupli){ /**dupli = false */
+                userPanier.push(myProduct)
+                console.log("j ajoute");
+            }
             console.log("Administration : le panier de l'utilisateur existe dans le localStorage");
+            localStorage.setItem("userPanier",JSON.stringify(userPanier));
                     }else{
                         console.log("Administration : Le panier n'existe pas, il va être créer et l'envoyer dans le localStorage");
+                        /**création du tableau du local.storage avec transformation en JSON pour la lecture et le passage des produits */
+                        panierProducts = []; /**creation du tableau vide*/ 
+                        panierProducts.push(myProduct) /**ajout de l'objet myProduct dans le tableau panierProducts */
+                        localStorage.setItem("userPanier",JSON.stringify(panierProducts));/**stockage du tableau JS dans le localstorage sous la forme JSON*/
+                        alert("produit ajouté au panier")
+                        numberOfProducts()/*rafraichit la page immédiatement*/
+                        return    
+                    }
+                    
+        alert("produit ajouté au panier")
         
-        /**création du tableau du local.storage avec transformation en JSON pour la lecture et le passage des produits */
-        let panierProducts = []; /**creation du tableau vide */
-        panierProducts.push(myProduct) /**ajout de l'objet myProduct dans le tableau panierProducts */
-        localStorage.setItem("userPanier",JSON.stringify(panierProducts));/**stockage du tableau JS dans le localstorage sous la forme JSON*/
-        }
   });
+  
+  
   };
- 
   

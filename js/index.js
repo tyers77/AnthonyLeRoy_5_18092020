@@ -17,15 +17,6 @@ const listContainer = document.getElementById("listContainer");/*recuperation de
 const createProductHtml = function (products){
     products.forEach((element) => { 
        
-        /*let myP = document.createElement("p");
-        myP.innerHTML = `<div class="figcaption">${element.name}</div>`
-        listContainer.appendChild(myP)
-
-        let myHtml = document.createElement("article")
-        myHtml.innerHTML = `<figure class="description"><img src="${element.imageUrl}" alt="photo ${element.name}"><figcaption>${element.name}<br><span class="price">${element.price /100}$</span>
-        <a href="product.html?id=${element._id}">
-        <i class="fas fa-bars"></i><span>Description</span></a></figure>`
-        listContainer.appendChild(myHtml)*/
 
     /*mise en place des balise HTML*/
 
@@ -65,5 +56,6 @@ const createProductHtml = function (products){
     });
 }
 
-/**Le Panier 1: initialisé la panier 2: crée le tableau*/
-/**Affiche le nombre de produit mis au panier */
+
+
+
