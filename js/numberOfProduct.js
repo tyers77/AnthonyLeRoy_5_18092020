@@ -5,9 +5,7 @@ numberOfProducts = () => {
         if (!Array.isArray(compteurPanier)) {  /**si compteurPanier n'est pas un tableau avec "!" ecrire "0" */
                 productPanier.innerHTML = "0";
         } else {
-                productPanier.innerHTML = compteurPanier.length;
-         /**sinon indiqué la taille du tableau */
+                productPanier.innerHTML = compteurPanier.length;/**sinon indiqué la taille du tableau */
         }
-        /*actualisé la page pour le compteur*/
 };
 numberOfProducts()  /**appel de la méthode */
