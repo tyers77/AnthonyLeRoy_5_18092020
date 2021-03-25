@@ -6,13 +6,12 @@
     <meta name="description" content="une entreprise de commerce en ligne,">
     <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/order.css">
     <link rel="shortcut icon" type="image/jpg" href="../images/logo.jpg">
     <script src="https://kit.fontawesome.com/45eba3c3b0.js" crossorigin="anonymous"></script>
-
-
     <title>Orinoco Accueil</title>
 </head>
+
 <body>
     <header>
         <a class="navLink" href="index.html">Accueil</a>
@@ -25,11 +24,22 @@
             <li><i class="fas fa-money-bill-wave"></i> Mode de paiement</li>
             <li><i class="fas fa-truck"></i> Livraison</li>
             <li><i class="fas fa-info"></i> Aide</li>
-            <li><a href="basket.html"><i class="fas fa-cart-arrow-down"></i>PANIER ( <span id="productPanier"></span> )</a></li>
+            <li><a href="basket.html"><i class="fas fa-cart-arrow-down"></i>PANIER (<span
+                        id="productPanier"></span>)</a></li>
         </ul>
     </nav>
     <section>
         <h2>Confirmation de votre commande</h2>
+        <h3 id="numberOfCommand"></h3>
+        <p id="total">0 €</p>
+        <p class="text">Bonjour, <span id="surName"></span>,</p>
+        <p class="text">
+            Nous vous remercions de votre achat.
+            Vous recevrez prochainement un e-mail comprenant votre facture et le numéro de suivi de votre commande.
+        <p class="text"> Nous vous souhaitons bonne réception.
+        </p>
+        <p class="text"> A très bientôt sur nos sites</p>
+        </p>
     </section>
     <footer>
         <div class="reseau">
@@ -43,5 +53,9 @@
             <li><a href="mailto">Contact</a></li>
         </ul>
     </footer>
-    </body>
-    </html>
+    <script src="../js/numberOfProduct.js" defer></script>
+    <script src="../js/order.js" defer></script>
+
+</body>
+
+</html>

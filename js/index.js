@@ -1,11 +1,11 @@
-/*repère dans l API */
+/*pour un repère dans l API */
 let idProduct = "";
 
 /*fonction requète Get by Fetch pour récuperer le tableau des produits c'est le lien avec l'API*/
 const getAllProduct = function () {
     fetch("http://localhost:3000/api/furniture" + "/" + idProduct)/*requète GET by url*/
         .then(response => response.json())/*ensuite la réponse est une reponse json faire "réponse est une réponse json"*/
-        .then(response => createProductHtml(response))/*ensuite faire de la réponse  ???*/
+        .then(response => createProductHtml(response))/*ensuite faire de la réponse createProductHtml*/
         .catch(error => console.error("erreur" + error))/*si il y a une erreur l inscrire dans la console*/
 }
 getAllProduct()
@@ -17,9 +17,7 @@ const listContainer = document.getElementById("listContainer");/*recuperation de
 const createProductHtml = function (products) {
     products.forEach((element) => {
 
-
         /*mise en place des balise HTML*/
-
         let productContenant = document.createElement("article");
         let productIllustration = document.createElement("figure");
         let productElement = document.createElement("figcation");

@@ -118,71 +118,36 @@ footer a {
   color: black;
 }
 
-/*section produits*/
 h2 {
+  font-size: 2em;
+  font-weight: bold;
   text-align: center;
-  font-size: 2.1em;
 }
 
-.description {
-  height: 180px;
-  margin: 0;
-  margin-left: 25px;
-  margin-right: 25px;
-  border: #E98B0B 5px solid;
-  border-radius: 12px;
-  margin-bottom: 30px;
-}
-.description .figure {
-  display: flex;
-  margin: 0;
-}
-.description .figure .figcaption {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  background-image: url(../images/texture.jpg);
-}
-.description .figure .figcaption .name {
-  width: 60%;
-  margin: 0;
+p.text {
+  font-size: 1.9em;
   text-align: center;
-  padding-top: 55px;
-  font-size: 1.5em;
+  margin-left: 10px;
+  margin-right: 10px;
 }
-.description .figure .figcaption .price {
-  width: 25%;
-  margin: 0;
-  padding-top: 55px;
-  font-size: 1.5em;
+
+#surName {
   font-weight: bold;
-  text-align: center;
+  color: #E98B0B;
 }
-.description .figure .figcaption a {
-  padding-top: 57px;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 1.3em;
+
+#numberOfCommand {
+  font-size: 1.5em;
+  text-align: center;
   font-weight: bold;
+  color: #935FF4;
+}
+
+#total {
+  font-size: 1.5em;
   text-align: center;
-  width: 15%;
-  text-decoration: none;
-  border-radius: 0px 6px 6px 0px;
-  background-image: linear-gradient(to right, #e98b0b, #935ff4);
-}
-.description .figure img {
-  width: 25%;
-  height: 180px;
-  border-radius: 5px 0px 0px 5px;
-  animation: img 3s ease-in-out;
-}
-@keyframes img {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+  font-weight: bold;
+  color: #935FF4;
 }
 
 /*responsive*/
@@ -232,4 +197,4 @@ h2 {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=order.css.map */

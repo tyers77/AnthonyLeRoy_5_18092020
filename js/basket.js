@@ -1,7 +1,7 @@
 const product = document.getElementById("panierProduct");/*recuperation de la balise html*/
 const userPanier = JSON.parse(localStorage.getItem("userPanier"));
-let i = 0
-/**création de l'objet de la commande à envoyer à l'API */
+
+
 /**création des variables à mettre dans l'objet à POST (un objet contact et un tableau des produits)*/
 let contact;
 let products = [];
@@ -9,20 +9,23 @@ let commande;
 let url = "http://localhost:3000/api/furniture/order";
 
 /**méthode annulation d'un produit */
-annulerProduit = (i) => {
-   userPanier.splice(i, 1);/**vide 1 élément du tableau par l index*/
+annulerProduit = (index) => {
+   console.log(index);
+   userPanier.splice(index, 1);/**vide 1 élément du tableau par l index*/
+   console.log(userPanier);
    localStorage.clear();/**vide le localstorage*/
    localStorage.setItem('userPanier', JSON.stringify(userPanier)); /**mettre à jour le localStorage avec le nouveau panier*/
-   window.location.reload();
-};
-
+  /*window.location.reload();*/
+}; 
 /**appel du localstorage */
 
 panierCreation = () => {
-   if (Array.isArray(userPanier) || userPanier.length > 0) {
-      document.getElementById("panierVide").remove()
+   if (!Array.isArray(userPanier) || userPanier.length > 0) {
+      document.getElementById("panierVide").remove();
+      let i = 0;
+      
       userPanier.forEach((element) => {
-
+       
          /*mise en place des balise HTML*/
 
          let productContenant = document.createElement("article");
@@ -67,6 +70,7 @@ panierCreation = () => {
                }
             })
             localStorage.setItem("userPanier", JSON.stringify(userPanier));
+         
             setTotalPrice()
          })
 
@@ -88,21 +92,26 @@ panierCreation = () => {
          labelQuantity.innerHTML = "Quantité : ";
 
          /** écoute et appel de la méthode de suppression produit  */
-         deleteProduct.addEventListener("click", this.annulerProduit.bind(i))/**PROBLEME !!!!!!supprime toujours le 1er */
-         i++
+         
+         console.log(i)
+         /** écoute et appel de la méthode de suppression produit  */
+         deleteProduct.addEventListener("click", annulerProduit.bind(i));/**PROBLEME !!!!!!supprime toujours le 1er */
+         i++;
       });
    }
 }
+
 panierCreation()
 
 /**méthode de calcul du montant a payer */
 
-setTotalPrice = () => {
+setTotalPrice = (price) => {
    let total = 0
    let totalCommande = document.getElementById("total");
    userPanier.forEach((element) => {
       total += element.price * element.quantity / 100;
       totalCommande.textContent = total + "€";
+      sessionStorage.setItem("price", JSON.stringify(total));/**envoi dans session pour récupération sur la page de confirmation */
    });
 }
 setTotalPrice()
@@ -180,6 +189,7 @@ checkPanier = () => {
       alert("votre panier est vide");
       return false;
    } else {
+
       console.log("panier vérifié");
    }
    return true;
@@ -214,7 +224,7 @@ const envoiFormulaire2 = function (order) {
       .then(response => response.json())/*ensuite la réponse est une reponse json faire "réponse est une réponse json"*/
       .then(data => {
          console.log(data)
-         sessionStorage.setItem("order", JSON.stringify(order));/**a completé ??? OK */
+         sessionStorage.setItem("order", JSON.stringify(data));/**a completé ??? OK */
          window.location = "../html/order.html";/**changement de page OK  */
       })
       .catch(error => console.error("erreur" + error))/*si il y a une erreur l inscrire dans la console*/
@@ -252,6 +262,5 @@ confirmCommande = () => {
    });
 };
 confirmCommande();
-
 
 

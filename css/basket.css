@@ -13,10 +13,6 @@ header {
   padding-top: 20px;
   margin-bottom: 30px;
   background-image: url(../images/forêtchêne.jpg);
-  /*.back{
-      display: flex;
-      justify-content: space-around;
-  }*/
   background-image: url(../images/forêtchêne.jpg);
 }
 header img {
@@ -26,11 +22,13 @@ header img {
   border-radius: 15px;
 }
 header h1 {
-  margin-right: 90px;
-  margin-left: 90px;
-  color: black;
-  background-color: #E98B0B;
+  width: 40%;
+  margin-right: 30%;
+  margin-left: 30%;
+  color: #251522;
+  background-color: #F3E9F1;
   font-weight: bold;
+  border-radius: 12px;
 }
 header a {
   color: #000;
@@ -146,16 +144,16 @@ h2 {
   background-image: url(../images/texture.jpg);
 }
 .description .figure .figcaption .name {
-  width: 45%;
+  width: 40%;
   margin: 0;
   text-align: center;
-  padding-top: 60px;
+  padding-top: 65px;
   font-size: 1.5em;
 }
 .description .figure .figcaption .price {
   width: 25%;
   margin: 0;
-  padding-top: 55px;
+  padding-top: 65px;
   font-size: 1.5em;
   font-weight: bold;
   text-align: center;
@@ -190,20 +188,22 @@ h2 {
 #quantity {
   margin-top: 60px;
   height: 15%;
-  width: 7%;
+  width: 6%;
   border-radius: 5px;
 }
 
 #labelQuantity {
+  font-size: 1.5em;
   font-weight: bold;
-  margin-top: 60px;
+  margin-top: 66px;
+  margin-left: 5px;
 }
 
 #remove {
   width: 5%;
   display: flex;
   flex-direction: column-reverse;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 #remove:hover {
   cursor: pointer;
@@ -222,7 +222,7 @@ h2 {
 
 #texttotal {
   text-align: right;
-  margin-right: 22px;
+  margin-right: 28px;
   font-size: 1.5em;
   font-weight: bold;
 }

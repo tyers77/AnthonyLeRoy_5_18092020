@@ -9,14 +9,12 @@
     <link rel="stylesheet" type="text/css" href="../css/basket.css">
     <link rel="shortcut icon" type="image/jpg" href="../images/logo.jpg">
     <script src="https://kit.fontawesome.com/45eba3c3b0.js" crossorigin="anonymous"></script>
-
-
     <title>Orinoco Accueil</title>
 </head>
 
 <body>
     <header>
-            <a class="navLink" href="index.html">Accueil</a>
+        <a class="navLink" href="index.html">Accueil</a>
         <h1>Site de vente en ligne</h1>
         <img src="../images/image1_min.jpg" alt="logo du site">
     </header>
@@ -32,10 +30,10 @@
     <section id="panierProduct">
         <div id="panier-recap">
             <p id="panierVide">Votre panier est vide</p>
-          </div>
-        </section>
-        <p id="texttotal">Total de votre commande : <span id="total">0 €</span></p>
-        <section>
+        </div>
+    </section>
+    <p id="texttotal">Total de votre commande : <span id="total">0 €</span></p>
+    <section>
         <form method="post" name="form-panier" id="formulaire">
             <fieldset>
                 <legend>Civilité</legend>
@@ -46,10 +44,11 @@
                     </div>
                     <div class="formgroup">
                         <label for="formPrenom" class="right-inline">Prénom :</label>
-                        <input type="text" id="formPrenom" class="form-control input-control" required name="formPrenom">
+                        <input type="text" id="formPrenom" class="form-control input-control" required
+                            name="formPrenom">
                     </div>
                 </div>
-            </fieldset> 
+            </fieldset>
             <fieldset>
                 <legend>Coordonnées</legend>
                 <div class="form__group">
@@ -67,30 +66,18 @@
             </fieldset>
             <fieldset>
                 <legend>
-                  Choix du moyen de paiement
+                    Choix du moyen de paiement
                 </legend>
                 <div id="carte">
-                  <input
-                    type="radio"
-                    class="paiement"
-                    name="identifieur"
-                    value="Visa"
-                    checked
-                  /><i class="fab fa-cc-visa fa-2x"></i>
-                  <input
-                    type="radio"
-                    class="paiement"
-                    name="identifieur"
-                    value="Mastercard"
-                  /><i class="fab fa-cc-mastercard fa-2x"></i>
-                  <input
-                    type="radio"
-                    class="paiement"
-                    name="identifieur"
-                    value="Paypal"
-                  /><i class="fab fa-cc-paypal fa-2x"></i>
-                </div></fieldset> 
-            <input type="button" value="Je valide ma commande"  id="envoiPost">
+                    <input type="radio" class="paiement" name="identifieur" value="Visa" checked /><i
+                        class="fab fa-cc-visa fa-2x"></i>
+                    <input type="radio" class="paiement" name="identifieur" value="Mastercard" /><i
+                        class="fab fa-cc-mastercard fa-2x"></i>
+                    <input type="radio" class="paiement" name="identifieur" value="Paypal" /><i
+                        class="fab fa-cc-paypal fa-2x"></i>
+                </div>
+            </fieldset>
+            <input type="button" value="Je valide ma commande" id="envoiPost">
         </form>
     </section>
     <footer>
@@ -105,7 +92,8 @@
             <li><a href="mailto">Contact</a></li>
         </ul>
     </footer>
-    <script src="../js/numberOfProduct.js" defer ></script>
+    <script src="../js/numberOfProduct.js" defer></script>
     <script src="../js/basket.js" defer></script>
-    </body>
-    </html>
+</body>
+
+</html>

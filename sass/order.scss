@@ -1,0 +1,98 @@
+@import "./utils/variables";
+
+body{
+    width: 100%;
+    margin: 0;
+    background-image: url(../images/texture.jpg);
+}
+header{
+    @include header;
+    background-image: url(../images/forêtchêne.jpg);
+}
+footer{
+    @include footer;
+ }
+/*menu*/
+.shop{
+    width: 100%;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+        li{
+            width: 20%;
+            color: #000;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            list-style: none;
+            border: solid 1px black;
+            border-radius: 5px;
+            padding: 8px;
+            background-image: $gradient;
+            box-shadow: 0px 5px 5px 0px #808080;
+            transition: background-color 500ms, box-shadow 500ms;
+    
+            &:hover{
+                cursor: pointer;
+                opacity: 0.90;
+                box-shadow: 0px 15px 15px 0px #808080;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        }
+}
+h2{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+}
+p.text {
+    font-size: 1.9em;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#surName {
+    font-weight: bold;
+    color: #E98B0B;
+}
+#numberOfCommand {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    color: #935FF4 ;
+}
+#total {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: bold;
+    color: #935FF4 ;
+}
+/*responsive*/
+@media all and (max-width: 570px){
+    @include responsive;
+    
+    .description{
+        margin-left: 5px;
+        width: 94%;
+            img{
+                image-rendering: pixelated;
+            }
+    }
+    .price{
+        font-size: 1em!important;
+        padding-top: 61px!important;
+    }
+    .name{
+        font-size: 1em!important;
+        padding-top: 61px!important;
+    }
+    .figcaption a {
+        font-size: .7em!important;
+        padding-top: 65px!important;
+    }
+}
