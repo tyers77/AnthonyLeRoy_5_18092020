@@ -1,6 +1,6 @@
+
 const product = document.getElementById("panierProduct");/*recuperation de la balise html*/
 const userPanier = JSON.parse(localStorage.getItem("userPanier"));
-
 
 /**création des variables à mettre dans l'objet à POST (un objet contact et un tableau des produits)*/
 let contact;
@@ -8,26 +8,15 @@ let products = [];
 let commande;
 let url = "http://localhost:3000/api/furniture/order";
 
-/**méthode annulation d'un produit */
-annulerProduit = (index) => {
-   console.log(index);
-   userPanier.splice(index, 1);/**vide 1 élément du tableau par l index*/
-   console.log(userPanier);
-   localStorage.clear();/**vide le localstorage*/
-   localStorage.setItem('userPanier', JSON.stringify(userPanier)); /**mettre à jour le localStorage avec le nouveau panier*/
-  /*window.location.reload();*/
-}; 
 /**appel du localstorage */
-
 panierCreation = () => {
    if (!Array.isArray(userPanier) || userPanier.length > 0) {
       document.getElementById("panierVide").remove();
-      let i = 0;
-      
-      userPanier.forEach((element) => {
-       
-         /*mise en place des balise HTML*/
 
+
+      userPanier.forEach((element) => {
+
+         /*mise en place des balise HTML*/
          let productContenant = document.createElement("article");
          let productIllustration = document.createElement("figure");
          let productElement = document.createElement("figcation");
@@ -39,7 +28,6 @@ panierCreation = () => {
          let quantity = document.createElement("input");
 
          /*Ajout des attributs au balise index HTML */
-
          productContenant.setAttribute("class", "description");
          productIllustration.setAttribute("class", "figure");
          productPicture.setAttribute("src", element.imageUrl);
@@ -70,12 +58,10 @@ panierCreation = () => {
                }
             })
             localStorage.setItem("userPanier", JSON.stringify(userPanier));
-         
             setTotalPrice()
          })
 
          /* Agencement des éléments index HTML */
-
          panierProduct.appendChild(productContenant);
          productElement.appendChild(labelQuantity);
          productElement.appendChild(quantity);
@@ -91,20 +77,27 @@ panierCreation = () => {
          productPrice.innerHTML = element.price / 100 + "€";
          labelQuantity.innerHTML = "Quantité : ";
 
+         /**méthode annulation d'un produit */
          /** écoute et appel de la méthode de suppression produit  */
-         
-         console.log(i)
-         /** écoute et appel de la méthode de suppression produit  */
-         deleteProduct.addEventListener("click", annulerProduit.bind(i));/**PROBLEME !!!!!!supprime toujours le 1er */
-         i++;
+         deleteProduct.addEventListener("click", () => {
+            console.log(element.name);
+            for (let index = 0; index < userPanier.length; index++) {   /**méthode "for" avec comparaison du name et "splice" pour annulation  */
+               if (userPanier[index].name == element.name) {
+                  userPanier.splice(index, 1);
+                  break;
+               }
+            }
+            console.log(userPanier);
+            localStorage.clear();/**vide le localstorage*/
+            localStorage.setItem('userPanier', JSON.stringify(userPanier));
+            window.location.reload();
+         })
       });
    }
 }
-
 panierCreation()
 
 /**méthode de calcul du montant a payer */
-
 setTotalPrice = (price) => {
    let total = 0
    let totalCommande = document.getElementById("total");
@@ -116,21 +109,16 @@ setTotalPrice = (price) => {
 }
 setTotalPrice()
 
-
 /**formulaire vérifier les champs utilisateur*/
-
 checkForm = () => {
    /**les regex pour vérifier les caractères utilisé par l'utilisateur*/
-
    const checkNumber = /[0-9]/;
    const checkMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    const checkSpecialCharacter = /[§!@#$%^&*().?":{}|<>]/;
-
    /**création du message d'erreur */
    let checkMessage = "";
 
-   /**récuperer la valeur des inputs */
-
+   /**récuperer la valeur des inputs par le DOM */
    let formNom = document.getElementById("formNom").value;
    let formPrenom = document.getElementById("formPrenom").value;
    let formMail = document.getElementById("formMail").value;
@@ -138,7 +126,6 @@ checkForm = () => {
    let formVille = document.getElementById("formVille").value;
 
    /**tests de chaque champs avec if et else + message d'erreur ou ok */
-
    if (checkNumber.test(formNom) == true || checkSpecialCharacter.test(formNom) == true || formNom == "") {
       checkMessage = "Veuillez vérifier les informations concernant votre nom.";
    } else {
@@ -180,10 +167,7 @@ checkForm = () => {
    };
 };
 
-
-
 /**méthode de vérification du panier si le panier est a 0 alert panier vide sinon envoyé l id pour chaque élément*/
-
 checkPanier = () => {
    if (userPanier.length < 1 || userPanier == null) {
       alert("votre panier est vide");
@@ -196,7 +180,6 @@ checkPanier = () => {
 };
 
 /**méthode 1 de post de la commande avec un session storage de contact et du produit et chargement page order.html */
-
 const envoiFormulaire = (order) => {
    let request = new XMLHttpRequest();
    request.onreadystatechange = function () {
@@ -211,8 +194,7 @@ const envoiFormulaire = (order) => {
    request.send(order);
 };
 
-/**méthode fetch pour le POST à l'API avec un session storage de contact et du produit et chargement page order.html*/
-
+/**méthode 2 avec "fetch" pour le POST à l'API avec un session storage de contact et du produit et chargement page order.html*/
 const envoiFormulaire2 = function (order) {
    fetch(url, {
       method: "post",
@@ -231,7 +213,6 @@ const envoiFormulaire2 = function (order) {
 }
 
 /**écoute sur le boutton de validation : la méthode */
-
 confirmCommande = () => {
    let commander = document.getElementById("envoiPost");
    commander.addEventListener("click", (event) => {
@@ -251,7 +232,6 @@ confirmCommande = () => {
          let sendForm = JSON.stringify(commande);
          console.log(commande);
          envoiFormulaire2(sendForm);
-
          /**Une fois la commande effectuée retour à l'état initial des tableaux/objet/localStorage*/
          contact = {};
          products = [];
