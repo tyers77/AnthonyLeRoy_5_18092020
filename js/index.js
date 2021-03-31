@@ -1,9 +1,9 @@
-/*pour un repère dans l API */
-let idProduct = "";
+/*accès à l API */
+
 
 /*fonction requète Get by Fetch pour récuperer le tableau des produits c'est le lien avec l'API*/
 const getAllProduct = function () {
-    fetch("http://localhost:3000/api/furniture" + "/" + idProduct)/*requète GET by url*/
+    fetch("http://localhost:3000/api/furniture")/*requète GET by url*/
         .then(response => response.json())/*ensuite la réponse est une reponse json faire "réponse est une réponse json"*/
         .then(response => createProductHtml(response))/*ensuite faire de la réponse createProductHtml*/
         .catch(error => console.error("erreur" + error))/*si il y a une erreur l inscrire dans la console*/
@@ -34,7 +34,7 @@ const createProductHtml = function (products) {
         productElement.setAttribute("class", "figcaption");
         productName.setAttribute("class", "name");
         productPrice.setAttribute("class", "price");
-        productLien.setAttribute("href", "product.html?id=" + element._id);
+        productLien.setAttribute("href", "product.html?id=" + element._id);/**passage de l'id dans l url */
         productLien.setAttribute("class", "lienDetail")
 
         /* Agencement des éléments index HTML */

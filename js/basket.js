@@ -179,23 +179,23 @@ checkPanier = () => {
    return true;
 };
 
-/**méthode 1 de post de la commande avec un session storage de contact et du produit et chargement page order.html */
+/**méthode 1 de post de la commande avec un session storage de contact et du produit et chargement page order.html 
 const envoiFormulaire = (order) => {
    let request = new XMLHttpRequest();
    request.onreadystatechange = function () {
       if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
-         sessionStorage.setItem("order", this.responseText);/**sauvegarde pour affichage des infos sur la page confirmation de commande */
-         window.location = "../html/order.html";/**changement de page  */
+         sessionStorage.setItem("order", this.responseText);/**sauvegarde pour affichage des infos sur la page confirmation de commande 
+         window.location = "../html/order.html";/**changement de page  
       } else {
       }
    };
    request.open("POST", url);
    request.setRequestHeader("Content-Type", "application/json");
    request.send(order);
-};
+};*/
 
 /**méthode 2 avec "fetch" pour le POST à l'API avec un session storage de contact et du produit et chargement page order.html*/
-const envoiFormulaire2 = function (order) {
+const envoiFormulaire = function (order) {
    fetch(url, {
       method: "post",
       headers: {
@@ -231,7 +231,7 @@ confirmCommande = () => {
          console.log("Ce tableau sera envoyé à l'API : " + products);
          let sendForm = JSON.stringify(commande);
          console.log(commande);
-         envoiFormulaire2(sendForm);
+         envoiFormulaire(sendForm);
          /**Une fois la commande effectuée retour à l'état initial des tableaux/objet/localStorage*/
          contact = {};
          products = [];
