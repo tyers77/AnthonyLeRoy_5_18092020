@@ -127,7 +127,7 @@ checkForm = () => {
 
    /**tests de chaque champs avec if et else + message d'erreur ou ok */
    if (checkNumber.test(formNom) == true || checkSpecialCharacter.test(formNom) == true || formNom == "") {
-      checkMessage = "Veuillez vérifier les informations concernant votre nom.";
+      checkMessage = "Veuillez vérifier les informations concernant votre nom.";//etre plus précis
    } else {
       console.log("nom vérifié");
    }
@@ -206,7 +206,7 @@ const envoiFormulaire = function (order) {
       .then(response => response.json())/*ensuite la réponse est une reponse json faire "réponse est une réponse json"*/
       .then(data => {
          console.log(data)
-         sessionStorage.setItem("order", JSON.stringify(data));/**a completé ??? OK */
+         sessionStorage.setItem("order", JSON.stringify(data));/**a completé OK */
          window.location = "../html/order.html";/**changement de page OK  */
       })
       .catch(error => console.error("erreur" + error))/*si il y a une erreur l inscrire dans la console*/
@@ -220,7 +220,7 @@ confirmCommande = () => {
       if (checkPanier() && checkForm() != null) {/**Si le panier n'est pas vide et que le formulaire est valide => Construction de l'objet commande(contact + produit) a envoyé à l'API*/
          console.log("L'envoi peut etre fait");
          userPanier.forEach((element) => {
-            console.log(element);
+            //console.log(element);
             products.push(element.id);
          });
          /**objet commande */
@@ -230,7 +230,7 @@ confirmCommande = () => {
          };
          console.log("Ce tableau sera envoyé à l'API : " + products);
          let sendForm = JSON.stringify(commande);
-         console.log(commande);
+         //console.log(commande);
          envoiFormulaire(sendForm);
          /**Une fois la commande effectuée retour à l'état initial des tableaux/objet/localStorage*/
          contact = {};
